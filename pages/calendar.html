@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="app-body" data-page="calendar">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">TrackForge</div>
+      <nav class="side-nav">
+        <a href="/">Dashboard</a>
+        <a href="/my-applications">My Applications</a>
+        <a href="/applications/new">Add Application</a>
+        <a href="/analytics">Analytics</a>
+        <a href="/calendar" class="active">Calendar</a>
+        <a href="/settings">Settings</a>
+      </nav>
+      <div class="sidebar-user">
+        <p>Signed in as</p>
+        <strong id="sidebar-user-name">Guest</strong>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <div>
+          <h1>Calendar</h1>
+          <p>Manage applications with clear status tracking.</p>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn-primary" href="/applications/new">+ New</a>
+          <form method="POST" action="/logout">
+            <button type="submit" class="btn-secondary">Logout</button>
+          </form>
+        </div>
+      </header>
+
+      <main class="container">
+        <div id="flash-message"></div>
+
+        <section class="card">
+          <div class="calendar-head">
+            <h2 id="calendar-month-label">Calendar</h2>
+            <div class="calendar-nav">
+              <a class="btn-secondary" id="calendar-prev" href="/calendar">Prev</a>
+              <a class="btn-secondary" id="calendar-current" href="/calendar">Current</a>
+              <a class="btn-secondary" id="calendar-next" href="/calendar">Next</a>
+            </div>
+          </div>
+
+          <div class="calendar-grid calendar-weekdays">
+            <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+          </div>
+
+          <div class="calendar-grid calendar-days" id="calendar-days"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
