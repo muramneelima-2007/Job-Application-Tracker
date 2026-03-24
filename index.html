@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="app-body" data-page="dashboard">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">TrackForge</div>
+      <nav class="side-nav">
+        <a href="/" class="active">Dashboard</a>
+        <a href="/my-applications">My Applications</a>
+        <a href="/applications/new">Add Application</a>
+        <a href="/analytics">Analytics</a>
+        <a href="/calendar">Calendar</a>
+        <a href="/settings">Settings</a>
+      </nav>
+      <div class="sidebar-user">
+        <p>Signed in as</p>
+        <strong id="sidebar-user-name">Guest</strong>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Manage applications with clear status tracking.</p>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn-primary" href="/applications/new">+ New</a>
+          <form method="POST" action="/logout">
+            <button type="submit" class="btn-secondary">Logout</button>
+          </form>
+        </div>
+      </header>
+
+      <main class="container">
+        <div id="flash-message"></div>
+
+        <section class="stats-grid" id="dashboard-stats"></section>
+
+        <section class="grid-two">
+          <article class="card">
+            <div class="card-head">
+              <h2>Recent Applications</h2>
+              <a class="btn-link" href="/my-applications">View all</a>
+            </div>
+            <div id="recent-applications"></div>
+          </article>
+
+          <article class="card">
+            <h2>Upcoming Interviews</h2>
+            <div id="upcoming-interviews"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

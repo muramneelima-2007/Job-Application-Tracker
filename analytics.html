@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="app-body" data-page="analytics">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">TrackForge</div>
+      <nav class="side-nav">
+        <a href="/">Dashboard</a>
+        <a href="/my-applications">My Applications</a>
+        <a href="/applications/new">Add Application</a>
+        <a href="/analytics" class="active">Analytics</a>
+        <a href="/calendar">Calendar</a>
+        <a href="/settings">Settings</a>
+      </nav>
+      <div class="sidebar-user">
+        <p>Signed in as</p>
+        <strong id="sidebar-user-name">Guest</strong>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <div>
+          <h1>Analytics</h1>
+          <p>Manage applications with clear status tracking.</p>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn-primary" href="/applications/new">+ New</a>
+          <form method="POST" action="/logout">
+            <button type="submit" class="btn-secondary">Logout</button>
+          </form>
+        </div>
+      </header>
+
+      <main class="container">
+        <div id="flash-message"></div>
+
+        <section class="stats-grid" id="analytics-stats"></section>
+
+        <section class="card">
+          <h2>Applications in Last 6 Months</h2>
+          <div class="bar-chart" id="analytics-bars"></div>
+        </section>
+
+        <section class="card">
+          <h2>Status Breakdown</h2>
+          <div class="status-breakdown" id="analytics-breakdown"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

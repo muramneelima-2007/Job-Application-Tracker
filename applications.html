@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Applications</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="app-body" data-page="applications">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">TrackForge</div>
+      <nav class="side-nav">
+        <a href="/">Dashboard</a>
+        <a href="/my-applications" class="active">My Applications</a>
+        <a href="/applications/new">Add Application</a>
+        <a href="/analytics">Analytics</a>
+        <a href="/calendar">Calendar</a>
+        <a href="/settings">Settings</a>
+      </nav>
+      <div class="sidebar-user">
+        <p>Signed in as</p>
+        <strong id="sidebar-user-name">Guest</strong>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="topbar">
+        <div>
+          <h1>My Applications</h1>
+          <p>Manage applications with clear status tracking.</p>
+        </div>
+        <div class="topbar-actions">
+          <a class="btn-primary" href="/applications/new">+ New</a>
+          <form method="POST" action="/logout">
+            <button type="submit" class="btn-secondary">Logout</button>
+          </form>
+        </div>
+      </header>
+
+      <main class="container">
+        <div id="flash-message"></div>
+
+        <section class="card filter-card">
+          <form method="GET" action="/my-applications" class="filter-form" id="filter-form">
+            <input type="text" name="search" id="filter-search" placeholder="Search company, role, location" />
+            <select name="status" id="filter-status"></select>
+            <button class="btn-primary" type="submit">Filter</button>
+            <a class="btn-secondary" href="/my-applications">Reset</a>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>My Applications</h2>
+          <div id="applications-content"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
